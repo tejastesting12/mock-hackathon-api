@@ -35,7 +35,7 @@ module.exports = (req, res, next) => {
                 // Check if 'contribution' exists and filter by platform
                 const contribution = item.contribution;
                 if (contribution) {
-                    return Object.keys(contribution).some(key => key.startsWith(platform));
+                    return Object.keys(contribution).some(key => key.contains(platform));
                 }
                 return false;
             });
